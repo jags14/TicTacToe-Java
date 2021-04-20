@@ -28,5 +28,27 @@ public class TicTacToe {
         board[i][j] = player; // Place the mark for the current player
         player = -player; // change the player.. X and O are negative of each other
     }
+    
+    //* Checking if the current player won after the move */
+    public boolean isWin(int mark){
+        return(
+            (board[0][0] + board[0][1] +board[0][2] == mark*3) || // row 1
+            (board[1][0] + board[1][1] +board[1][2] == mark*3) || // row 2
+            (board[2][0] + board[2][1] +board[2][2] == mark*3) || // row 3
+            (board[0][0] + board[1][0] +board[2][0] == mark*3) || // column 1
+            (board[0][1] + board[1][1] +board[2][1] == mark*3) ||
+            (board[0][2] + board[1][2] +board[2][2] == mark*3) ||
+            (board[0][0] + board[1][1] +board[2][2] == mark*3) || // diagonal
+            (board[0][2] + board[1][1] +board[2[0] = mark*3)      // reverse diagonal
+        );
+    
+    }
+    public int winner(){
+        if(isWin(X)) return (X);
+        else if(isWin(O)) return (O);
+        else return (0);
+    
+    }
+                                              
 
 }
